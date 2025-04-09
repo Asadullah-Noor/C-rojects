@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class Database {
+private:
+    static bool isconnected; // Changed from isconnected to isconnected
+
+public:
+    static void connection(const string &connected) {
+        if (!isconnected) {
+            cout << "Connected to the database " << connected << endl;
+            isconnected = true;
+        } else {
+            cout << "Already database is connected" << endl;
+            isconnected = false;
+        }
+    }
+
+    static void disconnected() {
+        if (isconnected) {
+            cout << "Disconnecting from the database" << endl;
+            isconnected = false;
+        } else {
+            cout << "Database is not connected" << endl;
+        }
+    }
+};
+
+bool Database::isconnected = false; // Corrected from isconneccted to isconnected
+
+int main() {
+    Database::connection("MySQL");
+    Database::connection("No MySQL");
+    Database::disconnected();
+    return 0;
+}

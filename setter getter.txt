@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std; 
+class bank{
+    private:
+    int balance;
+    int interest_rate;
+    int account_number;
+    public:
+    void setter(int blnce,int rate,int acc_no)
+    {
+        balance=blnce;
+        interest_rate=rate;
+        account_number=acc_no;
+    }
+    int getter(){
+        return balance;
+    }
+    int getter2(){
+        return interest_rate;
+    }
+    int getter3(){
+        return account_number;
+    }
+    void display(){
+        cout<<"BALANCE is "<<balance<<endl;
+        cout<<"Interest Rate  is "<<interest_rate<<" %"<<endl;
+        cout<<" Account Number is "<<account_number<<endl;
+    }
+    
+};
+int main(){
+    int b;
+    int r;
+    int acc;
+    cout<<"Enter your Balanace is here "<<endl;
+    cin>>b;
+    cout<<"Enter interest rate in pakistan "<<endl;
+    cin>>r;
+    cout<<"Enter Your Account Number is here"<<endl;
+    cin>>acc;
+     bank ba;
+    ba.setter(b,r,acc);
+    ba.display();
+    system("pause");
+    return 0;
+}

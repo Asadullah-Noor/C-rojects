@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+class oprator{
+    public:
+   static int n;
+    static int fac;
+   static void input();
+    static void fun();
+    static void display();
+};
+int oprator::n=0;
+int oprator::fac=1;
+//oiuregheorhgoiewgohgotr//kjhroiheroig//eihroiehg;
+void oprator::input()
+{
+    cout<<"Enter factorial number here "<<endl;
+    cin>>n;
+   
+}
+void oprator::fun(){
+    for(int i=1; i<n;i++)
+    {
+        fac=fac*(i+1);
+    }
+    
+}
+void oprator::display()
+{
+    cout<<"Number of the data is "<<fac<<endl;
+}
+int main(){
+    oprator h;
+    h.input();
+    h.fun();
+    h.display();
+    system("pause");
+    return 0;
+}

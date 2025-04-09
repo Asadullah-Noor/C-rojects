@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+const int normal=0;
+const int MED=1;
+const int HARD=2;
+using namespace std;
+class gamelevel
+{
+    int   number_Enemy;
+   int   obstacle;
+  int   time_constraint;
+    public:
+    gamelevel(int enemy,int obst, int tim): number_Enemy(enemy),obstacle(obst),time_constraint(tim){}
+    static int DetermineDifficulty_level(int enm, int obs, int tm)
+    {
+        if (enm>=3&&obs<=5&&tm>=60)
+        {
+         return normal;
+        }
+        else if (enm>=5&&obs<=7&&tm>=45){
+            return MED;
+        }
+        else{
+            return HARD;
+        }
+        
+    }
+    void display()
+    {
+        cout<<"  Level of the Game "<<endl;
+        cout <<"  Enemy killed "<< number_Enemy<<endl;
+        cout<<" Time consume "<<time_constraint<<endl;
+        cout<<" Obstacles "<<obstacle<<endl;
+    }
+    
+};
+int main(){
+    int enm=5;
+    int obst=7;
+     int tim=50;
+    gamelevel obj(enm,obst,tim);
+    obj.display();
+    int difficult=gamelevel::DetermineDifficulty_level(enm,obst,tim);
+    string level;
+    switch(difficult){
+    case normal:
+    level="normal";
+    case MED:
+    level="MED";
+    case HARD :
+    level="HARD";
+    }
+    cout<<"The Level of the game is "<<level<<endl;
+    system("pause");
+    return 0;
+}

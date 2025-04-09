@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+ class EMP{
+     private:
+     string name;
+     int id;
+     static int newID;
+     public:
+     EMP(const string &name):name(name){
+         id =newID++;
+     }
+     void display(){
+         cout<<"Name of the Employee is "<<name<<" and their id is "<<id<<endl;
+     }
+ };
+ int EMP:: newID=1000;
+ int main(){
+     EMP hero("SHAFIH MUHAMMAD");
+     EMP hero1("NOOR HASSAN ");
+     EMP hero2("ASAD ULLAH");
+     hero.display();
+     hero1.display();
+     hero2.display();
+     system("pause");
+     return 0;
+ }

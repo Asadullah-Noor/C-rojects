@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class hero{
+    private:
+    static int n;
+    public:
+    hero(int no)
+    {
+        n=no;
+        setter(n);
+    }
+    void setter(int num){
+        n=num;
+    } 
+    int getter (){
+        return n;
+    }
+    void display(){
+        cout<<"Total number of attendence is "<<n<<endl;
+    }
+    
+};
+int hero ::n=0;
+ int main(){
+hero ob(10);
+ob.display();
+     system ("pause");
+     return 0;
+ }

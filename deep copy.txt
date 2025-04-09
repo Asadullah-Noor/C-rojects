@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class hero {
+private:
+    char *name; // Change: char array instead of char pointer
+public:
+    hero(const char *str) {
+        name=new char;
+        strcpy(name, str); // Change: Copy string directly into name array
+    }
+   hero(const hero &amp){
+       name=new char[20];
+       strcpy(name,amp.name);
+   }
+    void concatenation(const char *str) {
+        strcpy(name, str); // Change: Append str to name using strcat
+    }
+
+    ~hero() {
+        // No need to delete[] name since it's a char array
+    }
+
+    void display() {
+        cout << "name of the student is here " << name << endl; // Change: Added << for cout
+    }
+};
+
+int main() {
+    hero obj("ASAD");
+    hero obj1 = obj;
+    obj.display();
+    obj1.display();
+    cout<<" *****DEEP Copy Constructer *****"<<endl;
+    obj.concatenation("ULLAH");
+    obj.display();
+    obj1.display();
+system("pause");
+    return 0;
+}
